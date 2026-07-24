@@ -54,13 +54,13 @@ export default function Contact() {
       return;
     }
 
-    emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
+    emailjs.sendForm(serviceId, templateId, formRef.current, { publicKey: publicKey })
       .then((result) => {
         setStatus({ loading: false, success: true, error: false });
         setFormData({ name: '', email: '', subject: '', message: '' });
         setTimeout(() => setStatus(prev => ({ ...prev, success: false })), 5000);
       }, (error) => {
-        console.error('EmailJS error:', error);
+        console.error('EmailJS error:', error.status, error.text || error);
         setStatus({ loading: false, success: false, error: true });
         setTimeout(() => setStatus(prev => ({ ...prev, error: false })), 5000);
       });
