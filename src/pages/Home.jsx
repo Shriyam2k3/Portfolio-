@@ -8,8 +8,6 @@ import Projects from '../components/Projects';
 import GitHubStats from '../components/GitHubStats';
 import LeetCodeStats from '../components/LeetCodeStats';
 import Education from '../components/Education';
-import Blog from '../components/Blog';
-import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
@@ -85,12 +83,6 @@ export default function Home() {
 
       {/* Education Timeline */}
       <Education />
-
-      {/* Blog Section */}
-      <Blog />
-
-      {/* Testimonials Section */}
-      <Testimonials />
       
       {/* Contact Section */}
       <Contact />
